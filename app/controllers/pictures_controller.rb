@@ -1,8 +1,7 @@
 class PicturesController < ApplicationController
 
 	def index
-		@greeting = "Hello World"
-
+		
 		@pictures = [
 			{
 				:title => "The old church on the coast of the white sea",
