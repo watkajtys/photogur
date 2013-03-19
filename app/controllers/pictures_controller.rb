@@ -5,7 +5,7 @@ class PicturesController < ApplicationController
 	end
 
 	def show
-		@picture = @pictures[0]
+		@picture = @pictures[params[:id].to_i]
 	end
 
 	def load_pictures
