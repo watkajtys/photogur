@@ -1,7 +1,14 @@
 class PicturesController < ApplicationController
+	before_filter :load_pictures
 
 	def index
-		
+	end
+
+	def show
+		@picture = @pictures[0]
+	end
+
+	def load_pictures
 		@pictures = [
 			{
 				:title => "The old church on the coast of the white sea",
@@ -20,9 +27,5 @@ class PicturesController < ApplicationController
 
 			}
 		]
-	end
-
-	def show
-		@picture = @pictures[0]
 	end
 end
