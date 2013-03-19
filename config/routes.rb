@@ -2,6 +2,7 @@ Photogur::Application.routes.draw do
 
   get 'pictures' => 'pictures#index'
 
+  get 'pictures/1' => 'pictures#show'
 
 
   

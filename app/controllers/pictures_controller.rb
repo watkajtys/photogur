@@ -21,4 +21,8 @@ class PicturesController < ApplicationController
 			}
 		]
 	end
+
+	def show
+		@picture = @pictures[0]
+	end
 end
