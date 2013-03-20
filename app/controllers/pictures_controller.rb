@@ -11,6 +11,10 @@ class PicturesController < ApplicationController
 	def new
 	end
 
+	def create
+		redirect_to 
+	end
+
 	def load_pictures
 		@pictures = [
 			{
