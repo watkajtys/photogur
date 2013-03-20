@@ -8,6 +8,9 @@ class PicturesController < ApplicationController
 		@picture = @pictures[params[:id].to_i]
 	end
 
+	def new
+	end
+
 	def load_pictures
 		@pictures = [
 			{
