@@ -11,13 +11,11 @@ class PicturesController < ApplicationController
 
 	def new
 		@picture = Picture.new
+		@picture.title = "Enter Title"
 	end
 
 	def create
-		@picture = Picture.new
-		@picture.title = params[:title]
-		@picture.artist = params[:artist]
-		@picture.url = params[:url]
+		@picture = Picture.create(params[:picture])
 		success = @picture.save
 		if success
 			redirect_to '/pictures'
