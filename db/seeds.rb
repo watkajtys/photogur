@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Picture.create!(
+    :title => "This is a title!",
+    :artist => "Me!",
+    :url => "http://www.desktopwallpaperhd.net/wallpapers/9/f/wallpapers-apple-backgrounds-cool-colored-logo-95151.jpg"
+    )

@@ -29,10 +29,10 @@ class PicturesController < ApplicationController
 
 	def update
 		@picture = Picture.find(params[:id])
-		@picture.update_attribute(:title, params[:title])
-		@picture.update_attribute(:artist, params[:artist])
-		@picture.update_attribute(:url, params[:url])
-		redirect_to '/pictures'
+		success = @picture.update_attributes(:title => params[:title], :artist => params[:artist], :url => params[:url])
+		if success
+			redirect_to '/pictures/'
+		end
 	end
 
 	# def load_pictures
