@@ -15,9 +15,8 @@ class PicturesController < ApplicationController
 	end
 
 	def create
-		@picture = Picture.create(params[:picture])
-		success = @picture.save
-		if success
+		@picture = Picture.new(params[:picture])
+		if @picture.save
 			redirect_to '/pictures'
 		end
 	end
@@ -28,30 +27,8 @@ class PicturesController < ApplicationController
 
 	def update
 		@picture = Picture.find(params[:id])
-		success = @picture.update_attributes(:title => params[:title], :artist => params[:artist], :url => params[:url])
-		if success
-			redirect_to '/pictures/'
+		if @picture.update_attributes params[:picture]
+			redirect_to "/pictures/#{@picture.id}"
 		end
 	end
-
-	# def load_pictures
-	# 	@pictures = [
-	# 		{
-	# 			:title => "The old church on the coast of the white sea",
-	# 			:artist => "Sergey Ershov",
-	# 			:url => 'http://monicao.s3.amazonaws.com/bitmaker/house.jpg'
-	# 		},
-	# 		{
-	# 			:title => "Sea Power",
-	# 			:artist => "Stephen Scullion",
-	# 			:url => 'http://monicao.s3.amazonaws.com/bitmaker/wave.jpg'
-	# 		},
-	# 		{
-	# 			:title => "Poppies",
-	# 			:artist => "John Wilhelm",
-	# 			:url => 'http://monicao.s3.amazonaws.com/bitmaker/girl.jpg'
-
-	# 		}
-	# 	]
-	# end
 end
