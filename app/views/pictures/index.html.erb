@@ -6,8 +6,12 @@
 	<div class = 'picture'>
 		<h2><%=picture.title%></h2>
 		<h3><%=picture.artist%></h3>
-		<a href="<%= picture_path(picture) %>"><img src="<%= picture.url %>"></img></a>
-		<a href="<%= edit_picture_path(picture) %>">Edit</a>
+        
+		<%= link_to picture_path picture do %>
+            <img src="<%= picture.url %>"></img>
+        <% end %>
+
+		<%= button_to "Edit", picture_path(picture), :method => :get %>
         <br>
 		<hr>
 	</div>
