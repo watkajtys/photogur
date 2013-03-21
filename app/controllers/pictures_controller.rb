@@ -28,7 +28,7 @@ class PicturesController < ApplicationController
 	def update
 		@picture = Picture.find(params[:id])
 		if @picture.update_attributes params[:picture]
-			redirect_to picture_path(@picture)
+			redirect_to @picture
 		else
 			redirect_to pictures_path
 		end
