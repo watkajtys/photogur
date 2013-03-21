@@ -1,2 +1,5 @@
-<h1><%= @picture[:title]  %></h1>
-<img src= "<%= @picture[:url] %>"></img>
+<a href="<%= pictures_path %>">Home</a>
+<h1><%= @picture.title %></h1>
+<img src= "<%= @picture.url %>"></img>
+<a href="<%= edit_picture_path @picture %>">Edit</a>
+<h2> <%= @picture.artist %></h2>

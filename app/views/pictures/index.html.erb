@@ -1,11 +1,14 @@
-<h1>Pictures</h1>
+<h1>Photogur!</h1>
+
+<%= link_to "New Picture", new_picture_path %>
 
 <%- @pictures.each do |picture| %>
 	<div class = 'picture'>
 		<h2><%=picture.title%></h2>
 		<h3><%=picture.artist%></h3>
-		<p><img src="<%= picture.url %>"></img></p>
-		<br>
+		<a href="<%= picture_path(picture) %>"><img src="<%= picture.url %>"></img></a>
+		<a href="<%= edit_picture_path(picture) %>">Edit</a>
+        <br>
 		<hr>
 	</div>
 <% end %>
