@@ -1,18 +1,22 @@
 <%= form_for @picture do |f| %>
     <div class="error"><%= flash[:error] %></div>
     <p>
-        <label>Artist</label><br>
-        <%= f.text_field "artist"%>
-    </p>
-    <p>
-        <label>Title</label><br>
+        <%= f.label "title", "Enter Image Title"  %><br>
         <%= @picture.errors[:title].join(",") %>
-        <%= f.text_field "title" %>
+        <%= f.text_field "title" %></label>
     </p>
     <p>
-        <label>URL</label><br>
+        <%= f.label "artist", "Enter Artist Name" %><br>
+        <%= f.text_field "artist"%></label>
+    </p>
+    <p>
+        <%= f.label "url", "Enter Image URL" %><br>
         <%= @picture.errors[:url].join(",") %>
         <%= f.text_field "url" %>
+    </p>
+    <p>
+        <%= f.check_box "copyrighted" %>
+        <%= f.label "copyrighted", "Photo has a copyright?" %>
     </p>
     <p>
         <%= f.submit "Save"  %>
