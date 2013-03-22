@@ -7,4 +7,7 @@ class Picture < ActiveRecord::Base
             :with => /^https?:/, :message => "Please Enter a Valid URL"
         }
     }
+
+    scope :alphabetical, order("title ASC")
+    scope :free, where(:copyrighted => false)
 end

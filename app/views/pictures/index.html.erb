@@ -1,3 +1,5 @@
+<%= link_to "Free pictures only", pictures_path(:free => "yes") %>
+
 <h1>Photogur!</h1>
 
 <%= link_to "New Picture", new_picture_path %>
@@ -8,7 +10,7 @@
 		<h3><%=picture.artist%></h3>
         
 		<%= link_to picture_path picture do %>
-            <img src="<%= picture.url %>"></img>
+            <%= image_tag picture.url  %>
         <% end %>
 
 		<%= button_to "Edit", picture_path(picture), :method => :get %>
