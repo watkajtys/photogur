@@ -19,7 +19,7 @@ class PicturesController < ApplicationController
 		if @picture.save
 			redirect_to pictures_path
 		else 
-			flash.now[:error] = "Could not save the picture."
+			flash[:error] = "Could not save the picture. Please try again."
 			render :new
 		end
 	end
