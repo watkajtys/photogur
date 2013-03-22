@@ -1,5 +1,5 @@
 <%= form_for @picture do |f| %>
-    <p><%= flash[:error] %></p>
+    <div class="error"><%= flash[:error] %></div>
     <p>
         <label>Artist</label><br>
         <%= f.text_field "artist"%>
